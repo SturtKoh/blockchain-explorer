@@ -1,4 +1,4 @@
-var api = 'https://explorer.bbscoin.xyz';
+var api = 'http://explorer.catalyst.cash/';
 var blockTargetInterval = 120;
 var coinUnits = 100000000;
 var symbol = 'XAT';
