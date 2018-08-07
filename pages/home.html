@@ -1,3 +1,10 @@
+<style>
+
+	#mem_pool_rows tr td:first-child {
+		text-align: left;
+	}
+</style>
+
 <div class="row">
 	<div class="col-sm-12 col-md-6">
 		<div class="panel panel-default" id="network-stats">
@@ -7,32 +14,39 @@
 		  <div class="panel-body">
 			<div class="row">
 				<div class="col-sm-6 col-md-6">
-					<ul class="nav nav-pills nav-stacked">
+					<ul class="list-group" style="margin-bottom: 0px;">
 					
-						<li><a href="#" data-toggle="tooltip" data-placement="top" data-original-title="Blockchain height, total amount of blocks starting from zero."><i class="fa fa-bars"></i> Height: <span id="networkHeight"></span></a></li>
+						<li class="list-group-item d-flex justify-content-between align-items-center" data-toggle="tooltip" data-placement="top" data-original-title="Blockchain height, total amount of blocks starting from zero."><i class="fa fa-list-ol"></i> Height: <span id="networkHeight"></span></li>
 				
-						<li><a href="#" data-toggle="tooltip" data-placement="top" data-original-title="The number of transactions in the network (excluding coinbase, i.e. reward for mined blocks)."><i class="fa fa fa-exchange"></i> Transactions: <span id="networkTransactions"></span></a></li>
+						<li class="list-group-item d-flex justify-content-between align-items-center" data-toggle="tooltip" data-placement="top" data-original-title="The number of transactions in the network (excluding coinbase, i.e. reward for mined blocks)."><i class="fa fa fa-exchange"></i> Transactions: <span id="networkTransactions"></span></li>
 						
-						<li><a href="#" data-toggle="tooltip" data-placement="top" data-original-title="Current Base Reward (for last mined block)."><i class="fa fa-certificate"></i> Reward: <span id="currentReward"></span></a></li>
+			
 						
-						<li><a href="#" data-toggle="tooltip" data-placement="top" data-original-title="Total XAT supply in circulation."><i class="fa fa-money"></i> Supply: <span id="totalCoins"></span></a></li>
+						<li class="list-group-item d-flex justify-content-between align-items-center" data-toggle="tooltip" data-placement="top" data-original-title="Current Base Reward (for last mined block)."><i class="fa fa-certificate"></i> Reward: <span id="currentReward"></span></li>
 						
-						<li><a href="#" data-toggle="tooltip" data-placement="bottom" data-original-title="Percent of already emitted coins related to Initial supply before Tail emission."><i class="fa fa-percent" aria-hidden="true"></i> Emission: <span id="emissionPercent"></span> %</a></li>
+						<li class="list-group-item d-flex justify-content-between align-items-center" data-toggle="tooltip" data-placement="top" data-original-title="Total XAT supply in circulation."><i class="fa fa-money"></i> Supply: <span id="totalCoins"></span></li>
+						
+						<li class="list-group-item d-flex justify-content-between align-items-center" data-toggle="tooltip" data-placement="top" data-original-title="Percent of already emitted coins related to Initial supply before Tail emission."><i class="fa fa-university" aria-hidden="true"></i> Emission: <span id="emissionPercent"></span> %</li>
+						
+						<li class="list-group-item d-flex justify-content-between align-items-center disabled" data-toggle="tooltip" data-placement="top" data-original-title="Minimum transaction fee."><i class="fa fa-percent" aria-hidden="true"></i> Min. fee: <span id="minimumFee"></span></li>
 						
 					</ul>
 				</div>
 				<div class="col-sm-6 col-md-6">
-					<ul class="nav nav-pills nav-stacked">
+					<ul class="list-group" style="margin-bottom: 0px;">
 					
-						<li><a href="#" data-toggle="tooltip" data-placement="top" data-original-title="Difficulty for next block. Ratio at which at the current hashing speed blocks will be mined with 4 minutes interval."><i class="fa fa-unlock-alt"></i> Difficulty: <span id="networkDifficulty"></span></a></li>
+						<li class="list-group-item d-flex justify-content-between align-items-center" data-toggle="tooltip" data-placement="top" data-original-title="Difficulty for next block. Ratio at which at the current hashing speed blocks will be mined with 4 minutes interval."><i class="fa fa-unlock-alt"></i> Next Difficulty: <span id="networkDifficulty"></span></li>
 				
-						<li><a href="#" data-toggle="tooltip" data-placement="top" data-original-title="Average difficulty by last 30 blocks."><i class="fa fa-lock"></i> Average Difficulty: <span id="avgDifficulty"></span></a></li>
+						<li class="list-group-item d-flex justify-content-between align-items-center" data-toggle="tooltip" data-placement="top" data-original-title="Average difficulty by last 30 blocks."><i class="fa fa-lock"></i> Average Difficulty: <span id="avgDifficulty"></span></li>
 					
-						<li><a href="#" data-toggle="tooltip" data-placement="top" data-original-title="Current estimated network hash rate. Calculated by current difficulty."><i class="fa fa-tachometer"></i> Hash Rate: <span id="networkHashrate"></span></a></li>
+					
+						<li class="list-group-item d-flex justify-content-between align-items-center" data-toggle="tooltip" data-placement="top" data-original-title="Current estimated network hash rate. Calculated by current difficulty."><i class="fa fa-tachometer"></i> Hash Rate: <span id="networkHashrate"></span></li>
 						
-						<li><a href="#" data-toggle="tooltip" data-placement="top" data-original-title="Average estimated network hash rate. Calculated by average difficulty."><i class="fa fa-clock-o"></i> Average Hash Rate: <span id="avgHashrate"></span></a></li>
+						<li class="list-group-item d-flex justify-content-between align-items-center" data-toggle="tooltip" data-placement="top" data-original-title="Average estimated network hash rate. Calculated by average difficulty."><i class="fa fa-tachometer"></i> Avg. Hash Rate: <span id="avgHashrate"></span></li>
 
-						<li><a href="#" data-toggle="tooltip" data-placement="bottom" data-original-title="Estimated block solve time at estimated network speed and current difficulty."><i class="fa fa-circle-o-notch" aria-hidden="true"></i> Solve time: <span id="blockSolveTime"></span></a></li>
+						<li class="list-group-item d-flex justify-content-between align-items-center" data-toggle="tooltip" data-placement="top" data-original-title="Estimated block solve time at estimated network speed and current difficulty."><i class="fa fa-clock-o" aria-hidden="true"></i> Est. solve time: <span id="blockSolveTime"></span></li>
+						
+						<li class="list-group-item d-flex justify-content-between align-items-center" data-toggle="tooltip" data-placement="top" data-original-title="Average solve time for the recent blocks listed below."><i class="fa fa-clock-o" aria-hidden="true"></i> Avg. solve time: <span id="avgSolveTime"></span></li>
 					
 					</ul>
 				</div>
@@ -46,11 +60,14 @@
 		<div class="panel panel-default">
 		  <div class="panel-heading">
 		  
-			<h3 class="panel-title"><i class="fa fa-area-chart" aria-hidden="true"></i> Difficulty charts</h3>
+			<h3 class="panel-title"><i class="fa fa-area-chart" aria-hidden="true"></i> Charts
+		  
+			<span class="text-default" data-toggle="tooltip" data-placement="right" data-original-title="Difficulty based on last blocks from the list below. Block size, transactions count. Load more blocks to enlarge chart range."><i class="fa fa-question-circle"></i></span>
+			</h3>
 			
 		  </div>
 		  <div class="panel-body chart-wrapper">
-			<canvas id="difficultyChart" height="210"></canvas>
+			<canvas id="difficultyChart" height="250"></canvas>
 		  </div>
 		</div>
 	</div>
@@ -61,18 +78,65 @@
   <div class="panel-heading">
   
 	<h3 class="panel-title"><i class="fa fa-exchange fa-fw" aria-hidden="true"></i> Transaction pool 
-	<span id="mempool_count" class="badge"></span>
 	<span class="text-default" data-toggle="tooltip" data-placement="right" data-original-title="Recent transactions waiting to be included into a block. Once it happens a transaction gets into the blockchain and becomes confirmed."><i class="fa fa-question-circle"></i></span>
     </h3>
 	
   </div>
   <div class="panel-body">
-    
-	<div>
+		
+		<div class="row">
+		  <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3">
+			<div class="panel panel-default tab-panel">
+			  <div class="panel-body">
+				
+				  <ul class="nav nav-pills nav-stacked">
+					<li data-toggle="tooltip" data-placement="bottom" data-original-title="">Count: <span id="mempool_count"></span></li>
+				  </ul>
+				
+			  </div>
+			</div>
+		  </div>
+		  <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3">
+			<div class="panel panel-default tab-panel">
+			  <div class="panel-body">
+				
+				  <ul class="nav nav-pills nav-stacked">
+					<li data-toggle="tooltip" data-placement="bottom" data-original-title="">Total Amount: <span id="mempool_amount"></span></li>
+				  </ul>
+				
+			  </div>
+			</div>
+		  </div>
+		  <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3">
+			<div class="panel panel-default tab-panel">
+			  <div class="panel-body">
+				
+				  <ul class="nav nav-pills nav-stacked">
+					<li href="javascript:void(0);" data-toggle="tooltip" data-placement="bottom" data-original-title="">Total Fees: <span id="mempool_fees"></span></a></li>
+				  </ul>
+				
+			  </div>
+			</div>
+		  </div>
+		  <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3">
+		    <div class="panel panel-default tab-panel">
+		      <div class="panel-body">
+			    
+			      <ul class="nav nav-pills nav-stacked">
+				    <li data-toggle="tooltip" data-placement="bottom" data-original-title="">Total Size: <span id="mempool_sizes"></span></li>
+			      </ul>
+			   
+		      </div>
+			</div>
+		  </div>
+		</div>
+
+
 		<div class="table-responsive">
 			<table class="table table-hover" id="mem_pool_table">
 				<thead>
 				<tr>
+					<th width="30%"><i class="fa fa-clock-o"></i> Date &amp; time</th>
 					<th width="10%"><i class="fa fa-money"></i> Amount</th>
 					<th width="10%"><i class="fa fa-tag"></i> Fee</th>
 					<th width="10%"><i class="fa fa-archive"></i> Size</th>
@@ -85,7 +149,6 @@
 			</table>
 		</div>
 	</div>
-  </div>
 </div>
 
 
@@ -115,7 +178,7 @@
 				<th><i class="fa fa-archive"></i> Size</th>
 				<th><i class="fa fa-paw"></i> Block Hash</th>
 				<th><i class="fa fa-unlock-alt"></i> Difficulty</th>
-				<th><i class="fa fa-bars"></i> Transactions</th>
+				<th><i class="fa fa fa-exchange"></i> Txs</th>
 			</tr>
 			</thead>
 			<tbody id="blocks_rows">
@@ -138,8 +201,10 @@ var block,
 	Txses = [],
 	Sizes = [],
 	Timestamps = [],
-	diffChart;
-
+	time_stamps = [],
+	Solvetimes = [],
+	diffChart,
+	refresh = true;
 
 currentPage = {
         destroy: function(){
@@ -150,8 +215,13 @@ currentPage = {
 				renderInitialBlocks()
 			).then(function() {
 				setTimeout(function(){
-					displayDiffChart();
-					refreshChart();
+					$.when(
+						displayDiffChart()
+					).then(function() {
+						setTimeout(function(){
+							refreshChart();
+						}, 100)
+					});
 				}, 500)
 			});
         },
@@ -160,11 +230,11 @@ currentPage = {
             updateText('networkHeight', lastStats.height.toString());
             updateText('networkTransactions', lastStats.tx_count.toString());
             updateText('networkHashrate', getReadableHashRateString(lastStats.difficulty / blockTargetInterval));
-            updateText('networkDifficulty', getReadableDifficultyString(lastStats.difficulty, 0).toString());
+            updateText('networkDifficulty', getReadableDifficultyString(lastStats.difficulty, 2).toString());
 			$("time.timeago").timeago();
 			getPoolTransactions();
 			var currHeight = $('#blocks_rows').children().first().data('height');
-			if((currHeight + 31) > lastStats.last_known_block_index){
+			if(refresh){
 				$.when(
 					renderInitialBlocks()
 				).then(function() {
@@ -216,7 +286,7 @@ $.ajax({
 			}
 		});
     }
-});				
+});
 }
 
 var xhrGetBlocks;
@@ -240,7 +310,7 @@ $('#loadMoreBlocks').click(function(){
 					 renderBlocks(data.result.blocks)
 				).then(function() {
 					setTimeout(function(){
-						refreshChart();
+						loadMoreChart();
 					}, 100)
 				});
             }
@@ -248,6 +318,7 @@ $('#loadMoreBlocks').click(function(){
 });
 
 $('#prev-page').click(function(e){
+	refresh = false;
     if (xhrGetBlocks) xhrGetBlocks.abort();
 	var currHeight = $('#blocks_rows').children().first().data('height');
 	var openHeight = (currHeight - 31 < 0) ? 0 : currHeight - 31;
@@ -287,6 +358,7 @@ $('#prev-page').click(function(e){
 });
 
 $('#next-page').click(function(e){
+	refresh = false;
     if (xhrGetBlocks) xhrGetBlocks.abort();
 	var currHeight = $('#blocks_rows').children().first().data('height');
 	var openHeight = (currHeight + 31 > lastStats.last_known_block_index) ? (lastStats.last_known_block_index) : currHeight + 31;
@@ -319,6 +391,7 @@ $('#next-page').click(function(e){
 	
 	if((currHeight + 61) > lastStats.last_known_block_index){
 		$('#next-page').addClass('disabled');
+		refresh = true;
 	}
 	
 		$('#prev-page').removeClass('disabled');
@@ -344,7 +417,6 @@ $('#goto-height').keyup(function(e){
 		if (urlParam('height')) 
 				loadHeight = parseInt(urlParam('height'));
             else
-//				loadHeight = lastStats.last_known_block_index;
 				loadHeight = lastStats.height - 1;
 		
 		if((loadHeight - 31) < 0){
@@ -383,7 +455,7 @@ $('#goto-height').keyup(function(e){
         var columns =
             '<td>' + block.height + '</td>' +
             '<td class="date-time">' + formatDate(block.timestamp) + ' (<time class="timeago" datetime="'+dateTime+'"></time>)</td>' +
-			'<td>' + block.cumul_size + '</td>' +
+			'<td>' + formatBytes(parseInt(block.cumul_size)) + '</td>' +
 			'<td>' + formatBlockLink(block.hash) + '</td>' +
             '<td class="blk-diff">' + block.difficulty + '</td>' +
             '<td>' + block.tx_count + '</td>';
@@ -393,7 +465,8 @@ $('#goto-height').keyup(function(e){
 		Txses.push(parseInt(block.tx_count));
 		Sizes.push(parseInt(block.cumul_size));
 		Timestamps.push(dateTime);
-				
+		time_stamps.push(block.timestamp);
+
         row.innerHTML = columns;
 		
         return row;
@@ -435,6 +508,7 @@ $('#goto-height').keyup(function(e){
         }
 		$("time.timeago").timeago();
 		calcAvgHashRate();
+		calcAvgSolveTime();
     }
 
 	function calcAvgHashRate(){
@@ -445,52 +519,84 @@ $('#goto-height').keyup(function(e){
 		var avgDiff = Math.round(sum / Difficulties.length);
 		var avgHashRate = avgDiff / blockTargetInterval;
 		
-		updateText('avgDifficulty', getReadableDifficultyString(avgDiff, 0).toString());
+		updateText('avgDifficulty', getReadableDifficultyString(avgDiff, 2).toString());
 		updateText('avgHashrate', getReadableHashRateString(avgDiff / blockTargetInterval));
         updateText('blockSolveTime', getReadableTime(lastStats.difficulty / avgHashRate));
 
 	}
 	
-//  Karbovanets MemPool Transactions
+	function calcAvgSolveTime(){ 
+		ts = time_stamps.concat([]);
+		ts.sort();
+		var avg_solve_time = 0;
+		var solveTime = 0;
+		for (var i = 1; i < ts.length; i++){
+			solveTime += ts[i] - ts[i - 1];
+		}
+		avg_solve_time = solveTime / (ts.length - 1);
+		updateText('avgSolveTime', getReadableTime(avg_solve_time));
+	}
+	
+//  MemPool Transactions
 function getPoolTransactions(){
-
-var xhrGetPool = $.ajax({
-			
-            url: api + '/json_rpc',
-            method: "POST",
-            data: JSON.stringify({
-                jsonrpc:"2.0",
-                id: "test",
-                method:"f_on_transactions_pool_json",
-                params: {
-  
-                }
-            }),
-            dataType: 'text',
-            cache: 'false',
-            success: function(data){
-				var txsRows = document.getElementById('mem_pool_rows');
+  var xhrGetPool = $.ajax({
+	url: api + '/json_rpc',
+	method: "POST",
+	data: JSON.stringify({
+		jsonrpc: "2.0",
+		id: "test",
+		method: "f_mempool_json",
+		params: {}
+	}),
+	dataType: 'json',
+	cache: 'false',
+	success: function(newdata) {
+		if(typeof newdata.result !== "undefined") {
+			var data = newdata.result.mempool;
+			var totalAmount = 0;
+			var totalFee = 0;
+			var totalSize = 0;
+			var txcount = 0;
+			var txsRows = document.getElementById('mem_pool_rows');
+			  if (txsRows) {
 				while (txsRows.firstChild) {
-					txsRows.removeChild(txsRows.firstChild);
+				  txsRows.removeChild(txsRows.firstChild);
 				}
-				var jsonData = JSON.parse(data);
-				jsonData.result.transactions.forEach(function(tx, i) {
-					var columns =
-							'<tr><td>' + getReadableCoins(tx.amount_out, 4, true) + '</td>' +
-							'<td>' + getReadableCoins(tx.fee, 4, true) + '</td>' +
-							'<td>' + tx.size + '</td>' +
-							'<td>' + tx.hash + '</td></tr>';
-					$(txsRows).append(columns);
-				});
-				updateText('mempool_count', document.querySelectorAll('#mem_pool_rows tr').length);
+			  }
+			for (var i = 0; i < data.length; i ++){
+				var tx = data[i];
+					
+				var row = document.createElement('tr');
+				var columns =
+					'<td>' + formatDate(tx.receiveTime) + ' (<span class="mtx-ago"></span>)' + '</td>' +
+					'<td>' + getReadableCoins(tx.amount_out, 4, true) + '</td>' +
+					'<td>' + getReadableCoins(tx.fee, 4, true) + '</td>' +
+					'<td>' + formatBytes(parseInt(tx.size)) + '</td>' +
+					'<td>' + formatPaymentLink(tx.hash) + '</td>';
+				row.innerHTML = columns;
+				$(txsRows).append(row);
+				$(row).find('.mtx-ago').timeago('update', new Date(tx.receiveTime * 1000).toISOString());
+				
+				txcount = txcount + 1;
+				totalAmount = tx.amount_out + totalAmount;
+				totalFee = totalFee + tx.fee;
+				totalSize = totalSize + tx.size;
+				
 			}
-    });
-};
+			updateText('mempool_count', txcount);
+			updateText('mempool_amount', getReadableCoins(totalAmount,4));
+			updateText('mempool_fees', getReadableCoins(totalFee, 8));
+			updateText('mempool_sizes', formatBytes(parseInt(totalSize)));
+		}
+	}
+  });
+}
 
 // Difficulty chart
 function displayDiffChart() {
 	var ctx = document.getElementById("difficultyChart");
 	var chartData = {
+			//labels: [].concat(Blocks).reverse(),
 			labels: [].concat(formatDate(Timestamps)).reverse(),
 			datasets: [
 			  {
@@ -570,22 +676,89 @@ function displayDiffChart() {
 			scales: {
 			  yAxes: [{
 				id: 'Height',
+				type: 'linear',
+				position: 'left',
+				scaleLabel: {
+					display: false,
+					labelString: 'Height'
+				},
+				gridLines: {
+					display:false
+				},
+				ticks: {
+					fontSize: 9,
+					display:false
+				},
 				display: false
 			  },{
 				id: 'Difficulty',
+				type: 'linear',
+				position: 'left',
+				scaleLabel: {
+					display: false,
+					labelString: 'Difficulty'
+				},
+				gridLines: {
+					display:false
+				},
+				ticks: {
+					fontSize: 9,
+					display:false
+				},
 				display: false
 			  },{
 				id: 'Transactions',
+				type: 'linear',
+				position: 'right',
+				scaleLabel: {
+					display: false,
+					labelString: 'Transactions'
+				},
+				gridLines: {
+					display:false
+				},
+				ticks: {
+					fontSize: 9,
+					display:false
+				},
 				display: false
 			  },{
 				id: 'Sizes',
+				type: 'linear',
+				position: 'right',
+				scaleLabel: {
+					display: false,
+					labelString: 'Size'
+				},
+				gridLines: {
+					display:false
+				},
+				ticks: {
+					fontSize: 9,
+					display:false
+				},
 				display: false
 			  }
+			  
 			  ],
 			  xAxes: [{
 				type: "time",
 				time: {
-                    format: 'MM/DD/YY HH:mm'
+                    parser: false,
+					unit: 'minute',
+					unitStepSize: 60,
+					round: 'second',
+					displayFormats: {
+                                        'millisecond': 'SSS [ms]',
+                                        'second': 'HH:mm:ss', // 11:20:01 AM
+                                        'minute': 'HH:mm', // 11:20:01 AM
+                                        'hour': 'HH:mm', // Sept 4, 5PM
+                                        'day': 'MMM Do', // Sep 4 2015
+                                        'week': 'll', // Week 46, or maybe "[W]WW - YYYY" ?
+                                        'month': 'MMM YYYY', // Sept 2015
+                                        'quarter': '[Q]Q - YYYY', // Q3
+                                        'year': 'YYYY', // 2017
+                                    },
 				},
 				gridLines: {
 					display:false
@@ -606,7 +779,10 @@ function displayDiffChart() {
 				//displayColors: false,
 				callbacks: {
 					title: function(tooltipItem, data) {
-						return new Date(data.labels[tooltipItem[0].index]).toLocaleString()
+						var height	= data.datasets[3].data[tooltipItem[0].index];
+						var time = new Date(data.labels[tooltipItem[0].index]).toLocaleString();
+						//return 'Block: ' + height + ' - ' + time + '';
+						return time + '';
 					},/*
 					label: function(tooltipItem, data) { 
 						var diff		= data.datasets[0].data[tooltipItem.index];
@@ -621,9 +797,9 @@ function displayDiffChart() {
 						
 						var multistringText = [];
   
-						var str1 = diff_swatch + 'Складність: ' + diff + '';
-						var str2 = 'Розмір: ' + size + '';
-						var str3 = 'Транзакції: ' + txcount + '';
+						var str1 = diff_swatch + 'Difficulty: ' + diff + '';
+						var str2 = 'Size: ' + size + '';
+						var str3 = 'Transactions: ' + txcount + '';
   
 						multistringText.push(str1);
 						multistringText.push(str2);
@@ -643,49 +819,33 @@ function displayDiffChart() {
 }
 
 function refreshChart() {
-	if (!diffChart) {
-		return;
-	}
-
 	var brows   = $('#blocks_rows').children(),
-		heights  = [],
+		labels  = [],
 		diffs   = [],
 		sizes   = [],
 		times   = [],
 		heights = [],
 		txsnr   = [];
-
-	var data = [];
-
 		for (var i = 0; i < brows.length; i++) {
 			var row = $(brows[i]);
+			var label = row.data("json").height;
+			var diff  = row.data("json").difficulty;
+			var txses = row.data("json").tx_count;
+			var size  = row.data("json").cumul_size;
+			var time  = row.attr('data-dt');
 
-			data.push({
-				height: parseInt(row.find('td:first').text()),
-				diff: parseInt(row.find('td.blk-diff').text()),
-				txsnr: parseInt(row.find('td:last').text()),
-				size: parseInt(row.find('td:nth-child(3)').text()),
-				time: new Date(row.attr('data-dt'))
-			});			
+				labels.push(label);
+				diffs.push(diff);
+				txsnr.push(txses);
+				sizes.push(size);				
+				times.push(time);				
 		}
-
-		data.sort(function(a, b) {
-			return b.time - a.time;
-		});
-
-		diffChart.data.labels = [];
-		diffChart.data.datasets[0].data = [];
-		diffChart.data.datasets[1].data = [];
-		diffChart.data.datasets[2].data = [];
-		diffChart.data.datasets[3].data = [];
-
-		for (var i = 0; i < data.length; i++) {
-			diffChart.data.labels.push(data[i].time);
-			diffChart.data.datasets[0].data.push(data[i].height);
-			diffChart.data.datasets[1].data.push(data[i].diff);
-			diffChart.data.datasets[2].data.push(data[i].txsnr);
-			diffChart.data.datasets[3].data.push(data[i].size);
-		}
+		
+		diffChart.data.labels = times.reverse();
+		diffChart.data.datasets[0].data = labels.reverse();
+		diffChart.data.datasets[1].data = diffs.reverse();
+		diffChart.data.datasets[2].data = txsnr.reverse();
+		diffChart.data.datasets[3].data = sizes.reverse();
 		
 		diffChart.update();
 }	
